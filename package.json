@@ -1,0 +1,23 @@
+{
+  "name": "es6-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PyColors/ES6-Node.git"
+  },
+  "keywords": [
+    "ES6",
+    "node"
+  ],
+  "author": "PyColors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PyColors/ES6-Node/issues"
+  },
+  "homepage": "https://github.com/PyColors/ES6-Node#readme"
+}
