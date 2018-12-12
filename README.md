@@ -33,6 +33,14 @@ Start the local server on with livereload by webpack: `port:...`
 $ npm run ...
 ```
 
+### Test
+
+###### Run the test.
+
+```sh
+$ npm test
+```
+
 License
 ----
 
