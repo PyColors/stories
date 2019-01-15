@@ -12,6 +12,7 @@ ES6-Node uses a number of open source projects to work properly:
 * [Babel] - The compiler for writing next generation JavaScript
 * [Foundation] - The most advanced responsive front-end framework in the world
 * [MongoDB] - The MongoDB Database 
+* [Mongoose] - Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment
 
 
 And of course Choose your iPhone itself is open source with a [public repository][dill]
@@ -58,6 +59,7 @@ MIT
    [Babel]: <https://babeljs.io/>
    [Foundation]: <https://github.com/zurb/foundation-sites>
    [MongoDB]: <https://github.com/mongodb/mongo>
+   [Mongoose]: <https://github.com/Automattic/mongoose>
    
   
    
