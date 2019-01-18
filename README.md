@@ -32,10 +32,10 @@ $ npm install
 
 ### Start the server
 
-Start the local server on with livereload by webpack: `port:...`
+Start the local server on with livereload by webpack: `port:8081`
 
 ```sh
-$ npm run ...
+$ npm start
 ```
 
 ### Test
@@ -45,6 +45,15 @@ $ npm run ...
 ```sh
 $ npm test
 ```
+
+### Build
+
+###### Build js and scss files.
+
+```sh
+$ npm run build
+```
+
 
 License
 ----
