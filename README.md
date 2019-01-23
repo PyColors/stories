@@ -54,14 +54,6 @@ $ npm test
 $ npm run build
 ```
 
-
-License
-----
-
-MIT
-
-**Free Software, Hell Yeah!**
-
 [//]: # 
    [Webpack]: <https://github.com/webpack/webpack>
    [Node.js]: <https://github.com/nodejs/node>
