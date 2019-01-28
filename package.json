@@ -22,9 +22,11 @@
   },
   "homepage": "https://github.com/PyColors/ES6-Node#readme",
   "dependencies": {
+    "bootstrap": "^4.2.1",
     "chalk": "^2.4.2",
     "debug": "^4.1.1",
     "express": "^4.16.4",
+    "jquery": "^3.3.1",
     "material-components-web": "^0.43.0",
     "mongoose": "^5.4.4",
     "morgan": "^1.9.1"
