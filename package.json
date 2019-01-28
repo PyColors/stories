@@ -23,9 +23,11 @@
   "homepage": "https://github.com/PyColors/ES6-Node#readme",
   "dependencies": {
     "chalk": "^2.4.2",
+    "debug": "^4.1.1",
     "express": "^4.16.4",
     "material-components-web": "^0.43.0",
-    "mongoose": "^5.4.4"
+    "mongoose": "^5.4.4",
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
     "@material/button": "^0.43.0",
