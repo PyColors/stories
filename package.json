@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "DEBUG=server node server.js && webpack-dev-server"
+    "start": "DEBUG=server node server.js && webpack-dev-server",
+    "lint": "eslint server.js"
   },
   "repository": {
     "type": "git",
