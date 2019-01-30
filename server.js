@@ -14,9 +14,9 @@ app.use('/js', express.static(path.join(__dirname, '/node_modules/bootstrap/dist
 app.use('/js', express.static(path.join(__dirname, '/node_modules/jquery/dist')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/index.html'));
+  res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
 app.listen(port, () => {
-    debug(`listening on port ${chalk.green(port)}`);
+  debug(`listening on port ${chalk.green(port)}`);
 });
