@@ -22,8 +22,11 @@ const nav = [
 ];
 // Pass nav in to booksRoutes
 const bookRouter = require('./src/routes/booksRoutes')(nav);
+const adminRouter = require('./src/routes/adminRouters')(nav);
 
 app.use('/books', bookRouter);
+app.use('/admin', adminRouter);
+
 app.get('/', (req, res) => {
   res.render(
   'index',

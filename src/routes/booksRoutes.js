@@ -31,7 +31,8 @@ function router (nav) {
         }
     ];
 
-    bookRouter.route('/').get((req, res) => {
+    bookRouter.route('/')
+        .get((req, res) => {
         res.render(
             'bookListView',
             {
@@ -57,6 +58,5 @@ function router (nav) {
 
     return bookRouter;
 }
-
 
 module.exports = router;
