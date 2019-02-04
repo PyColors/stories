@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "DEBUG=server nodemon server.js && webpack-dev-server",
+    "start": "DEBUG=server,server:* nodemon server.js && webpack-dev-server",
     "lint": "eslint server.js"
   },
   "repository": {
