@@ -25,15 +25,19 @@
     "body-parser": "^1.18.3",
     "bootstrap": "^4.2.1",
     "chalk": "^2.4.2",
+    "cookie-parser": "^1.4.3",
     "debug": "^4.1.1",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "jquery": "^3.3.1",
     "material-components-web": "^0.43.0",
     "mongodb": "^3.1.13",
     "mongoose": "^5.4.4",
     "morgan": "^1.9.1",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "@material/button": "^0.43.0",
