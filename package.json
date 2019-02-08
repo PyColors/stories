@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/PyColors/ES6-Node#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "bootstrap": "^4.2.1",
     "chalk": "^2.4.2",
     "debug": "^4.1.1",
