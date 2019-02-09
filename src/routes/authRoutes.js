@@ -1,10 +1,11 @@
 const express = require('express');
 const { MongoClient, ObjectID } = require('mongodb');
 const debug = require('debug')('server:authRoutes');
+const passport = require('passport');
 
 const authRouter = express.Router();
 
-function router() {
+function router(nav) {
     authRouter.route('/signUp')
         .post((req, res) => {
             const { username, password } = req.body;
@@ -38,6 +39,24 @@ function router() {
                 }
             }());
         });
+
+    authRouter.route('/signin')
+        .get((req, res) => {
+            res.render('signin', {
+                nav,
+                title: 'signIn'
+            });
+        })
+        // passport uses authenticate by the local one, no fb, twiter, et.
+        .post(passport.authenticate('local', {
+            /* Options */
+            // if he does work
+            successRedirect: '/auth/profile',
+
+            // if he does not work
+            failureRedirect: '/'
+        }));
+
 
     authRouter.route('/profile')
         .get((req, res) => {
