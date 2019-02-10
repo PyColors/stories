@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/PyColors/ES6-Node#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.2.1",
     "chalk": "^2.4.2",
@@ -37,7 +38,8 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.9",
     "passport": "^0.4.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "@material/button": "^0.43.0",
