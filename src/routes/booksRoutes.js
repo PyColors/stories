@@ -5,6 +5,14 @@ const debug = require('debug')('server:bookRoutes');
 const bookRouter = express.Router();
 
 function router (nav) {
+    bookRouter.use((req, res, next) => {
+        // more like: req.user.admin, req.user.roles
+        if (req.user) {
+            next();
+        } else {
+            res.redirect('/');
+        }
+    });
 
     bookRouter.route('/')
         .get((req, res) => {
