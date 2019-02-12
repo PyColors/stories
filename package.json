@@ -39,6 +39,7 @@
     "nodemon": "^1.18.9",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "webpack-dev-server": "^3.1.14",
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
@@ -58,8 +59,7 @@
     "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
-    "webpack": "^3.12.0",
-    "webpack-dev-server": "^2.11.3"
+    "webpack": "^3.12.0"
   },
   "nodemonConfig": {
     "restartable": "rs",
