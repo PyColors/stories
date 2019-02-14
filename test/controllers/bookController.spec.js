@@ -1,7 +1,7 @@
-const chai = require("chai");
+// const chai = require("chai");
 // const expect = chai.expect;
 
-const indexPage = require("/src/controllers/bookController");
+const indexPage = require("../../src/controllers/bookController");
 
 describe("getIndex", function () {
     it("should return index page function", function () {
