@@ -31,7 +31,7 @@ $ npm install
 
 ### Start the server
 
-Start the local server on with livereload by webpack: `port:8081`
+Start the local server on with livereload by webpack: `port:4000`
 
 ```sh
 $ npm start
@@ -39,18 +39,18 @@ $ npm start
 
 ### Test
 
-###### Run the test.
+###### Run tests with Mocha.
 
 ```sh
 $ npm test
 ```
 
-### Build
+### Lint
 
-###### Build js and scss files.
+###### Run lint with ESLint
 
 ```sh
-$ npm run build
+$ npm lint
 ```
 
 [//]: # 
