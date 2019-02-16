@@ -1,6 +1,7 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const debug = require('debug')('server:authRoutes');
+// manage user obj in session
 const passport = require('passport');
 
 const authRouter = express.Router();

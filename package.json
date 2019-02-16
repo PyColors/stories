@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
   "scripts": {
+    "precommit": "lint-staged",
     "start": "DEBUG=server,server:* nodemon server.js && webpack-dev-server",
     "lint": "eslint server.js",
     "test": "mocha './test/**/*.spec.js'"
@@ -62,6 +69,7 @@
     "file-loader": "^3.0.1",
     "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
+    "prettier": "1.16.4",
     "sass-loader": "^7.1.0",
     "webpack": "^3.12.0"
   },

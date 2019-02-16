@@ -5,8 +5,6 @@ const debug = require('debug')('server');
 const morgan = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
-// manage user obj in session
-const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
@@ -29,8 +27,8 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 const nav = [
-    {link: "/books", title: "Book"},
-    {link: "/authors", title: "Author"}
+    {link: '/books', title: 'Book'},
+    {link: '/authors', title: 'Author'}
 ];
 // Pass nav in to Routes
 const bookRouter = require('./src/routes/booksRoutes')(nav);
@@ -44,13 +42,13 @@ app.use('/auth', authRoute);
 
 app.get('/', (req, res) => {
   res.render(
-  'index',
-   {
-    nav: [{ link: '/books', title: 'Books' },
-        {link: "/authors", title: "Authors"}],
-    title: 'Stories'
+      'index',
+      {
+          nav: [{link: '/books', title: 'Books'},
+              {link: '/authors', title: 'Authors'}],
+          title: 'Stories'
     }
-   );
+  );
 });
 
 app.listen(port, () => {
