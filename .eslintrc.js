@@ -1,6 +1,8 @@
 module.exports = {
-    "extends": "airbnb-base",
-    "rules":{
-        "comma-dangle": 0
-    }
-};
+ extends: ['airbnb-base', 'plugin:prettier/recommended'],
+ plugins: ['prettier'],
+ rules: {
+  'comma-dangle': 0,
+  'prettier/prettier': 'error',
+ },
+}
