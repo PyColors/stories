@@ -25,8 +25,8 @@ ES6-Node requires [Node.js](https://nodejs.org/) v8+ to run.
 Install the dependencies and devDependencies.
 
 ```sh
-$ cd ES6-Node
-$ npm install
+$ cd in project
+$ yarn install
 ```
 
 ### Start the server
@@ -34,7 +34,7 @@ $ npm install
 Start the local server on with livereload by webpack: `port:4000`
 
 ```sh
-$ npm start
+$ yarn start
 ```
 
 ### Test
@@ -42,18 +42,18 @@ $ npm start
 ###### Run tests with Mocha.
 
 ```sh
-$ npm test
+$ yarn test
 ```
 
 ### Lint
 
-###### Run lint with ESLint
+###### Run lint with ESLint and Prettier
 
 ```sh
-$ npm lint
+$ yarn lint
 ```
 
-[//]: # 
+[//]: #
    [Webpack]: <https://github.com/webpack/webpack>
    [Node.js]: <https://github.com/nodejs/node>
    [Eslint]: <https://eslint.org/>
