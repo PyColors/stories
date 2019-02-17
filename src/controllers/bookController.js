@@ -1,79 +1,75 @@
-const {MongoClient, ObjectID} = require("mongodb");
-const debug = require("debug")("server:bookController");
+const { MongoClient, ObjectID } = require('mongodb')
+const debug = require('debug')('server:bookController')
 
 function bookController(bookService, nav) {
-    function getIndex(req, res) {
-        const url = "mongodb://localhost:27017";
-        const dbName = "libraryApp";
+ function getIndex(req, res) {
+  const url = 'mongodb://localhost:27017'
+  const dbName = 'libraryApp'(async function mongo() {
+   let client
+   try {
+    client = await MongoClient.connect(url)
+    debug('Connected correctly to server')
 
-        (async function mongo() {
-            let client;
-            try {
-                client = await MongoClient.connect(url);
-                debug("Connected correctly to server");
+    const db = client.db(dbName)
 
-                const db = client.db(dbName);
+    const col = await db.collection('books')
 
-                const col = await db.collection("books");
+    const books = await col.find().toArray()
 
-                const books = await col.find().toArray();
+    res.render('bookListView', {
+     nav,
+     title: 'Stories',
+     books,
+    })
+   } catch (err) {
+    debug(err.stack)
+   }
+   client.close()
+  })()
+ }
 
-                res.render("bookListView", {
-                    nav,
-                    title: "Stories",
-                    books
-                });
-            } catch (err) {
-                debug(err.stack);
-            }
-            client.close();
-        })();
-    }
+ function getById(req, res) {
+  const { id } = req.params
+  const url = 'mongodb://localhost:27017'
+  const dbName = 'libraryApp'(async function mongo() {
+   let client
+   try {
+    client = await MongoClient.connect(url)
+    debug('Connected correctly to server')
 
-    function getById(req, res) {
-        const {id} = req.params;
-        const url = "mongodb://localhost:27017";
-        const dbName = "libraryApp";
+    const db = client.db(dbName)
 
-        (async function mongo() {
-            let client;
-            try {
-                client = await MongoClient.connect(url);
-                debug("Connected correctly to server");
+    const col = await db.collection('books')
 
-                const db = client.db(dbName);
+    const book = await col.findOne({ _id: new ObjectID(id) })
+    debug(book)
 
-                const col = await db.collection("books");
+    book.details = await bookService.getBookById(book.bookId)
+    res.render('bookView', {
+     nav,
+     title: 'Stories',
+     book,
+    })
+   } catch (err) {
+    debug(err.stack)
+   }
+  })()
+ }
 
-                const book = await col.findOne({_id: new ObjectID(id)});
-                debug(book);
+ function middleware(req, res, next) {
+  // more like: req.user.admin, req.user.roles
+  //    if (req.user) {
+  next()
+  //    } else {
+  //       res.redirect('/');
+  //   }
+ }
 
-                book.details = await bookService.getBookById(book.bookId);
-                res.render("bookView", {
-                    nav,
-                    title: "Stories",
-                    book
-                });
-            } catch (err) {
-                debug(err.stack);
-            }
-        })();
-    }
-
-    function middleware(req, res, next) {
-        // more like: req.user.admin, req.user.roles
-        //    if (req.user) {
-        next();
-        //    } else {
-        //       res.redirect('/');
-        //   }
-    }
-
-    return {
-        getIndex,
-        getById,
-        middleware
-    };
+ return {
+  getIndex,
+  getById,
+  middleware,
+ }
 }
 
-module.exports = bookController;
+module.exports = bookController

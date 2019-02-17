@@ -9,7 +9,7 @@
   }
  },
  "lint-staged": {
-   "src/**/*.{js,jsx,json,css}": [
+   "src/**/*.{js,json,css}": [
    "prettier --write",
    "git add"
   ]
@@ -17,7 +17,7 @@
  "scripts": {
   "precommit": "lint-staged",
   "start": "DEBUG=server,server:* nodemon server.js && webpack-dev-server",
-  "lint": "eslint server.js",
+   "lint": "eslint \"src/**/*.js\"",
   "test": "mocha './test/**/*.spec.js'"
  },
  "repository": {
