@@ -1,19 +1,19 @@
-const express = require('express')
-const bookController = require('../controllers/bookController')
+const express = require('express');
+const bookController = require('../controllers/bookController');
 
-const bookRouter = express.Router()
-const bookService = require('../services/goodreadsService')
+const bookRouter = express.Router();
+const bookService = require('../services/goodreadsService');
 
 function router(nav) {
- const { getIndex, getById, middleware } = bookController(bookService, nav)
+  const { getIndex, getById, middleware } = bookController(bookService, nav);
 
- bookRouter.use(middleware)
+  bookRouter.use(middleware);
 
- bookRouter.route('/').get(getIndex)
+  bookRouter.route('/').get(getIndex);
 
- bookRouter.route('/:id').get(getById)
+  bookRouter.route('/:id').get(getById);
 
- return bookRouter
+  return bookRouter;
 }
 
-module.exports = router
+module.exports = router;
