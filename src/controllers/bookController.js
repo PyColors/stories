@@ -1,6 +1,12 @@
 const { MongoClient, ObjectID } = require('mongodb');
 const debug = require('debug')('server:bookController');
 
+/**
+ *
+ * @param bookService
+ * @param nav
+ * @returns {{getIndex, getById, middleware}}
+ */
 function bookController(bookService, nav) {
   function getIndex(req, res) {
     const url = 'mongodb://localhost:27017';
@@ -29,10 +35,17 @@ function bookController(bookService, nav) {
     })();
   }
 
+  /**
+   *
+   * @param req
+   * @param res
+   */
   function getById(req, res) {
     const { id } = req.params;
     const url = 'mongodb://localhost:27017';
-    const dbName = 'libraryApp'(async function mongo() {
+    const dbName = 'libraryApp';
+
+    (async function mongo() {
       let client;
       try {
         client = await MongoClient.connect(url);
@@ -57,6 +70,12 @@ function bookController(bookService, nav) {
     })();
   }
 
+  /**
+   *
+   * @param req
+   * @param res
+   * @param next
+   */
   function middleware(req, res, next) {
     // more like: req.user.admin, req.user.roles
     //    if (req.user) {

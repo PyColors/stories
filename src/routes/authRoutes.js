@@ -6,6 +6,12 @@ const passport = require('passport');
 
 const authRouter = express.Router();
 
+/**
+ * Routes to signUp, signin and, profile
+ *
+ * @param nav
+ * @returns {Router|router}
+ */
 function router(nav) {
   authRouter.route('/signUp').post((req, res) => {
     const { username, password } = req.body;
@@ -46,7 +52,7 @@ function router(nav) {
         title: 'signIn',
       });
     })
-    // passport uses authenticate by the local one, no fb, twiter, et.
+    // passport uses authenticate by the local one, no fb, twitter, et.
     .post(
       passport.authenticate('local', {
         /* Options */

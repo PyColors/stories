@@ -4,6 +4,11 @@ const bookController = require('../controllers/bookController');
 const bookRouter = express.Router();
 const bookService = require('../services/goodreadsService');
 
+/**
+ *
+ * @param nav
+ * @returns {*}
+ */
 function router(nav) {
   const { getIndex, getById, middleware } = bookController(bookService, nav);
 
