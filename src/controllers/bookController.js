@@ -78,11 +78,11 @@ function bookController(bookService, nav) {
    */
   function middleware(req, res, next) {
     // more like: req.user.admin, req.user.roles
-    //    if (req.user) {
-    next();
-    //    } else {
-    //       res.redirect('/');
-    //   }
+    if (req.user) {
+      next();
+    } else {
+      res.redirect('/');
+    }
   }
 
   return {
