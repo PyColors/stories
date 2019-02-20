@@ -59,5 +59,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
- debug(`listening on port ${chalk.green(port)}`)
+    debug(`listening on port ${chalk.green(port)} at http://localhost:4000`)
 });
