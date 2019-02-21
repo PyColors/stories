@@ -1,7 +1,7 @@
 const axios = require('axios');
 const xml2js = require('xml2js');
 const debug = require('debug')('server:goodreadsService');
-const apiKeys = require('../apiKeys');
+const apiKeys = require('../../src/config/apiKeys');
 
 /**
  * Get books from API
