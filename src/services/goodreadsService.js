@@ -1,7 +1,12 @@
 const axios = require('axios');
 const xml2js = require('xml2js');
 const debug = require('debug')('server:goodreadsService');
+const apiKeys = require('../apiKeys');
 
+/**
+ * Get books from API
+ * @returns {{getBookById: (function(*): Promise<any>)}}
+ */
 function goodreadsService() {
   // By default 'xml2js' put an Array for everything
   const parser = xml2js.Parser({ explicitArray: false });
@@ -10,7 +15,9 @@ function goodreadsService() {
     return new Promise((resolve, reject) => {
       axios
         .get(
-          `https://www.goodreads.com/book/show/${id}.xml?key=X4ePRnKnYFn9BqXV4srqzw`
+          `https://www.goodreads.com/book/show/${id}.xml?key=${
+            apiKeys.goodreadsKey
+          }`
         )
         .then(response => {
           parser.parseString(response.data, (err, result) => {

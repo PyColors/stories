@@ -69,3 +69,5 @@ typings/
 .idea
 
 bundles
+
+apiKeys.*
