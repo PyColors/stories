@@ -70,4 +70,4 @@ typings/
 
 bundles
 
-apiKeys.js
+src/config/apiKeys.js
