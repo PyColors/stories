@@ -53,6 +53,22 @@ $ yarn test
 $ yarn lint
 ```
 
+### MongoDB
+
+###### Run this command into your mongo folder
+
+```sh
+$  ./mongod 
+```
+
+###### if `data directory/data/db/ not found` you may have to run these commands:
+
+```sh
+$  sudo mkdir -p /data/db 
+$  sudo chmod 777 /data/db 
+```
+
+
 [//]: #
    [Webpack]: <https://github.com/webpack/webpack>
    [Node.js]: <https://github.com/nodejs/node>
